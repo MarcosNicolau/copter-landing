@@ -1,0 +1,37 @@
+@use './breakpoints' as *;
+
+@mixin mq($point) {
+    $size: map-get($breakpoints, $point);
+
+    @if $point == 'small' {
+        @media screen and (max-width: $size) {
+            @content;
+        }
+    }
+    @if $point == 'medium' {
+        @media screen and (max-width: $size) {
+            @content;
+        }
+    }
+}
+
+@mixin btn-hover($bg, $color) {
+    @if $color {
+        color: $color;
+    }
+    background-color: $bg;
+}
+
+@mixin icon-bg($bg) {
+    padding: 2em;
+    border-radius: 50%;
+    background-color: $bg;
+}
+
+@mixin box-shadow {
+    box-shadow: 0px 4px 20px rgba(115, 115, 115, 0.25);
+}
+
+@mixin transition($type, $duration) {
+    transition: $type ease-in-out $duration;
+}

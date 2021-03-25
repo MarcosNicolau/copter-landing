@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+@each $wght, $wght-value in $type-wght {
+    .font-wght-#{$wght} {
+        font-weight: $wght-value;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}

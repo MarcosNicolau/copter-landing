@@ -1,0 +1,29 @@
+/*=============
+Typography scale declaration:
+    *Starts on 55px and goes down to 13px 5 by 5;
+    *Exceptions: 350: 16px, 300: 13px.
+===============*/
+$type-scale: (
+    small: (
+        850: 2.1875rem,
+        750: 1.875rem,
+        600: 1.5625rem,
+        550: 1.25rem,
+    ),
+    big: (
+        //55px...
+        850: 3.4375rem,
+        800: 3.125rem,
+        750: 2.8125rem,
+        700: 2.5rem,
+        650: 2.1875rem,
+        600: 1.875rem,
+        550: 1.5625rem,
+        //20px
+        500: 1.25rem,
+        //16px
+        450: 1rem,
+        //13px
+        400: 0.8125rem,
+    ),
+);
