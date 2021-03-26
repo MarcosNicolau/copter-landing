@@ -15,6 +15,26 @@
     }
 }
 
+@mixin pseudo($loc: before, $content: '', $pos: absolute) {
+    position: relative;
+
+    &::#{$loc} {
+        content: $content;
+        position: $pos;
+        bottom: 0.5;
+        display: block;
+        @content;
+    }
+}
+
+@mixin abs-positioning($top: unset, $right: unset, $bottom: unset, $left: unset) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
 @mixin btn-hover($bg, $color) {
     @if $color {
         color: $color;
@@ -32,6 +52,6 @@
     box-shadow: 0px 4px 20px rgba(115, 115, 115, 0.25);
 }
 
-@mixin transition($type, $duration) {
+@mixin transition($type, $duration: 250ms) {
     transition: $type ease-in-out $duration;
 }

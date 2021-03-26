@@ -1,0 +1,103 @@
+@use '../abstracts' as *;
+
+.nav {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1em;
+    font-size: var(--fs-450);
+
+    .nav__logo {
+        height: 2.5rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        & > * {
+            margin: 0 1em;
+        }
+    }
+
+    .nav__links {
+        position: relative;
+        @include pseudo($loc: 'after') {
+            height: 0.1rem;
+            width: 0%;
+            background-color: var(--clr-primary-100);
+            @include transition(width, 250ms);
+        }
+
+        &:hover::after {
+            width: 100%;
+            @include transition(width, 250ms);
+        }
+    }
+
+    .nav__active-link {
+        @include pseudo($loc: 'after') {
+            height: 0.1rem;
+            width: 100%;
+            background-color: var(--clr-primary-100);
+            @include transition(width, 250ms);
+        }
+    }
+
+    //DROPDOWN STYLING
+    .nav__dropdown {
+        position: relative;
+        &:hover .nav__dropdown__list {
+            pointer-events: all;
+            opacity: 1;
+        }
+        .nav__dropdown__img {
+            display: inline-block;
+            height: 0.5em;
+            margin-left: 0.2em;
+            @include transition(transform);
+        }
+        &:hover .nav__dropdown__img {
+            transform: rotate(180deg);
+            @include transition(transform);
+        }
+    }
+
+    .nav__dropdown__list {
+        position: absolute;
+        @include abs-positioning($left: 50%);
+        transform: translateX(-50%);
+        pointer-events: none;
+        opacity: 0;
+        border-radius: 0.6rem;
+        @include transition(opacity);
+
+        li {
+            margin: 0;
+            border-radius: 0.6rem;
+            @include transition(background-color);
+            &:hover {
+                background-color: var(--clr-neutral-870);
+                @include transition(background-color);
+            }
+        }
+        a {
+            display: inline-block;
+            padding: 0.8rem 4rem 0.8rem 1rem;
+            width: 100%;
+            @include transition(all);
+
+            &::after {
+                display: none;
+            }
+
+            &:hover {
+                color: var(--clr-primary-300);
+                text-shadow: 0px 0px 1px var(--clr-primary-300);
+                @include transition(all);
+            }
+        }
+        .nav__dropdown__active-link {
+            color: var(--clr-primary-300);
+            text-shadow: 0 0 1px var(--clr-primary-300);
+        }
+    }
+}

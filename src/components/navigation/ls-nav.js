@@ -1,32 +1,35 @@
 import { NavLink } from 'react-router-dom';
+import CotizationDropdown from './dropdowns/cotizations-dropdown';
+import AuthBtns from './auth-btns';
 import logo from '../../assets/company/logo.svg';
-import '../../styles/layout/navigation.scss';
+import logoLight from '../../assets/company/logo-light.svg';
 import '../../styles/style.scss';
 
-const Nav = () => {
+const Nav = ({ isLight, areButtonsLight }) => {
     return (
-        <nav className="flex-row">
+        <nav
+            data-aos="fade-down"
+            data-aos-duration="1500"
+            className={`flex-row nav  ${isLight ? 'text-neutral-1000' : 'text-primary-100'}`}
+        >
             <ul className="flex-row-center">
                 <li>
-                    <NavLink to="/" exact>
-                        <img src={logo} alt="logo" className="logo" />
+                    <NavLink className="nav__link" to="/" exact>
+                        <img src={isLight ? logoLight : logo} alt="logo" className="nav__logo" />
                     </NavLink>
                 </li>
+                <CotizationDropdown isLight={isLight} />
                 <li>
-                    <NavLink to="/nosotros" className="links" activeClassName="active-link">
-                        Cotizaciones
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/nosotros" className="links" activeClassName="active-link">
+                    <NavLink
+                        to="/nosotros"
+                        className={`nav__links`}
+                        activeClassName="nav__active-link"
+                    >
                         Nostros
                     </NavLink>
                 </li>
             </ul>
-            <div className="btn-1">
-                <NavLink to="/nosotros">Hello</NavLink>
-                <NavLink to="/nosotros">Hello</NavLink>
-            </div>
+            <AuthBtns />
         </nav>
     );
 };

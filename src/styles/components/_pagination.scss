@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+body {
+    max-width: 70%;
+    margin: 0 auto;
+    @include mq(small) {
+        max-width: 80%;
+    }
+}
