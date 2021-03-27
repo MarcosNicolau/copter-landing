@@ -1,7 +1,13 @@
-import Nav from './ls-nav';
+import Nav from "./nav";
+import MobileNav from "./mobile-nav";
 
 const Navigation = () => {
-    return <Nav />;
+	return (
+		<>
+			<Nav />
+			<MobileNav />
+		</>
+	);
 };
 
 export default Navigation;

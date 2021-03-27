@@ -1,0 +1,77 @@
+@use '../../abstracts' as *;
+
+.mobile-nav-container {
+	position: absolute;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	display: none;
+	@include mq("small-medium") {
+		display: block;
+	}
+}
+
+.mobile-nav {
+	padding-top: 2rem;
+	.mobile-nav__logo {
+		height: 2rem;
+	}
+}
+
+.mobile-nav-menu {
+	overflow: auto;
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 2rem 3rem;
+	@include abs-positioning($top: 0, $left: 0);
+
+	&__top {
+		padding: 0 1rem;
+		margin-bottom: 5em;
+	}
+
+	.mobile-nav-menu__links-container {
+		margin: 0em auto 2em;
+		width: 75%;
+		max-height: 26rem;
+		overflow-y: auto;
+		align-items: center;
+		& > * {
+			text-align: center;
+			margin: 0 0 3em;
+		}
+		ul {
+			& > * {
+				margin-bottom: 0.5em;
+			}
+		}
+		@include mq("medium") {
+			width: 50%;
+		}
+	}
+
+	h5 {
+		font-weight: 600;
+		padding-bottom: 0.5em;
+		margin: 0 0 1rem 0;
+		width: 100%;
+		border-bottom: 0.1rem solid var(--clr-neutral-1000);
+	}
+}
+
+.mobile-nav-menu--show {
+	visibility: visible;
+	transform: translateX(0%);
+	@include transition;
+}
+
+.mobile-nav-menu--hide {
+	visibility: hidden;
+	transform: translateX(100%);
+	@include transition;
+}
+
+#mobile-nav-container--show {
+	min-height: 100vh;
+}

@@ -1,55 +1,68 @@
 @use '../abstracts' as *;
 
 .button-container {
-    @include mq(medium) {
-        flex-direction: column;
-    }
+	@include mq("small-medium") {
+		flex-direction: column;
+	}
 }
 
 .button {
-    display: inline-block;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    border-radius: 0.9rem;
-    padding: 0.5rem 1.25rem;
-    cursor: pointer;
+	display: inline-block;
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+	border-radius: 0.9rem;
+	padding: 0.5rem 1.25rem;
+	cursor: pointer;
 }
 
 .auth {
-    border: solid 0.09rem #ffffff;
-    font-size: var(--fs-400);
-    font-weight: 700;
-    width: 8rem;
-    letter-spacing: 0.02rem;
-    margin: 0.5rem;
-    @include transition(opacity);
-    &:hover {
-        opacity: 0.85;
-        @include transition(opacity);
-    }
-}
-
-.login {
-    border-color: var(--clr-primary-100);
-    color: var(--clr-primary-100);
-}
-
-.login-light {
-    color: var(--clr-neutral-1000);
-}
-
-.register {
-    background-color: var(--clr-primary-100);
-    color: var(--clr-neutral-1000);
-}
-
-.register-light {
-    background-color: var(--clr-neutral-1000);
-    color: var(--clr-neutral-1000);
+	border: solid 0.09rem #ffffff;
+	font-size: var(--fs-400);
+	font-weight: 700;
+	width: 8rem;
+	letter-spacing: 0.02rem;
+	margin: 0.5rem;
+	@include transition(opacity);
+	&:hover {
+		opacity: 0.85;
+		@include transition(opacity);
+	}
 }
 
 .cta {
-    font-size: var(--fs-500);
-    font-weight: 700;
-    letter-spacing: 0.05rem;
+	border: solid 0.15rem;
+	text-transform: uppercase;
+	font-size: var(--fs-500);
+	font-weight: 500;
+	letter-spacing: 0.05rem;
+	padding: 0.6rem 2rem;
+	margin-top: 3.5rem;
+	border-radius: 1.3rem;
+	@include transition;
+	&:hover {
+		@include transition;
+	}
+}
+
+.cta-violet {
+	border-color: var(--clr-secondary-100);
+	color: var(--clr-secondary-100);
+	&:hover {
+		background-color: var(--clr-secondary-100);
+		color: var(--clr-neutral-1000);
+		text-shadow: 0 0 2px var(--clr-neutral-1000);
+	}
+}
+
+.cta-white {
+	color: var(--clr-netural-1000);
+	border-color: var(--clr-netural-100);
+
+	@include transition;
+	&:hover {
+		background-color: var(--clr-secondary-100);
+		color: var(--clr-neutral-1000);
+		text-shadow: 0 0 2px var(--clr-neutral-1000);
+		@include transition;
+	}
 }

@@ -1,57 +1,77 @@
 @use './breakpoints' as *;
 
 @mixin mq($point) {
-    $size: map-get($breakpoints, $point);
+	$large: map-get($breakpoints, "large");
+	$medium: map-get($breakpoints, "medium");
+	$small: map-get($breakpoints, "small");
 
-    @if $point == 'small' {
-        @media screen and (max-width: $size) {
-            @content;
-        }
-    }
-    @if $point == 'medium' {
-        @media screen and (max-width: $size) {
-            @content;
-        }
-    }
+	@if $point == "small" {
+		@media screen and (max-width: $small) {
+			@content;
+		}
+	}
+	@if $point == "medium" {
+		@media screen and (min-width: $small) and (max-width: $medium) {
+			@content;
+		}
+	}
+
+	@if $point == "large" {
+		@media screen and (min-width: $medium) and (max-width: $large) {
+			@content;
+		}
+	}
+
+	@if $point == "small-medium" {
+		@media screen and (max-width: $medium) {
+			@content;
+		}
+	}
+
+	@if $point == "all" {
+		@media screen and (max-width: $large) {
+			@content;
+		}
+	}
 }
 
-@mixin pseudo($loc: before, $content: '', $pos: absolute) {
-    position: relative;
+@mixin pseudo($loc: before, $content: "", $pos: absolute) {
+	position: relative;
 
-    &::#{$loc} {
-        content: $content;
-        position: $pos;
-        bottom: 0.5;
-        display: block;
-        @content;
-    }
+	&::#{$loc} {
+		content: $content;
+		position: $pos;
+		bottom: 0.5;
+		display: block;
+		@content;
+	}
 }
 
 @mixin abs-positioning($top: unset, $right: unset, $bottom: unset, $left: unset) {
-    position: absolute;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
 }
 
 @mixin btn-hover($bg, $color) {
-    @if $color {
-        color: $color;
-    }
-    background-color: $bg;
+	@if $color {
+		color: $color;
+	}
+	background-color: $bg;
 }
 
 @mixin icon-bg($bg) {
-    padding: 2em;
-    border-radius: 50%;
-    background-color: $bg;
+	padding: 1.1em;
+	border-radius: 50%;
+	background-color: $bg;
 }
 
 @mixin box-shadow {
-    box-shadow: 0px 4px 20px rgba(115, 115, 115, 0.25);
+	box-shadow: 0px 4px 20px rgba(115, 115, 115, 0.25);
 }
 
-@mixin transition($type, $duration: 250ms) {
-    transition: $type ease-in-out $duration;
+@mixin transition($type: all, $duration: 250ms, $delay: 0ms) {
+	transition: $type ease-in-out $duration $delay;
 }

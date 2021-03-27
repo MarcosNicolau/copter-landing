@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+.card {
+	margin-bottom: 4em;
+
+	img {
+		height: 3em;
+		width: 3em;
+	}
+
+	h4 {
+		color: var(--clr-neutral-0);
+		font-weight: 700;
+	}
+
+	&__img-container {
+		margin-right: 2em;
+		@include mq("small") {
+			margin-right: 0em;
+		}
+		box-shadow: rgba(115, 115, 115, 0.15) 0px 2px 5px;
+		@include icon-bg(var(--clr-neutral-970));
+	}
+}
+
+#card-1 {
+	display: grid;
+	grid-template-columns: auto auto;
+	place-items: center;
+	@include mq("small") {
+		grid-template-columns: auto;
+		justify-content: start;
+		align-content: start;
+		margin-bottom: 5em;
+		text-align: center;
+	}
+}

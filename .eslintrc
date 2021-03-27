@@ -1,0 +1,7 @@
+{
+	"rules": {
+		"eqeqeq": "off",
+		"curly": "off"
+	},
+	"parser": "babel-eslint"
+}

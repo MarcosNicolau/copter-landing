@@ -1,9 +1,15 @@
 @use '../abstracts' as *;
+::-moz-selection {
+	/* Code for Firefox */
+	color: var(--clr-neutral-1000);
+	background: var(--clr-primary-100);
+}
 
-body {
-    max-width: 70%;
-    margin: 0 auto;
-    @include mq(small) {
-        max-width: 80%;
-    }
+::selection {
+	color: var(--clr-neutral-1000);
+	background: var(--clr-primary-100);
+}
+
+.delimit-line {
+	border-bottom: solid 0.09rem var(--clr-neutral-700);
 }

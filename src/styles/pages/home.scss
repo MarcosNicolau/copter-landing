@@ -1,0 +1,91 @@
+@use '../abstracts' as *;
+
+.hero {
+	min-height: 100vh;
+	@include mq("small-medium") {
+		color: white;
+	}
+
+	//Add margin bottom for the medium and small devices
+	@include mq("small-medium") {
+		margin-bottom: 20rem;
+	}
+
+	&__background {
+		z-index: -10;
+		background-image: url("../../assets/backgrounds/hero.svg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 50%;
+
+		//Change background properties for medium and small devices
+		@include mq("small-medium") {
+			width: 100%;
+			height: 210%;
+			background-image: url("../../assets/backgrounds/hero-md.svg");
+		}
+
+		@include mq("small") {
+			height: 250%;
+			background-image: url("../../assets/backgrounds/hero-sm.svg");
+		}
+	}
+
+	&__title {
+		padding-top: 12em;
+		@include mq("small-medium") {
+			padding-top: 12em;
+		}
+		h1 {
+			margin-bottom: 0.5em;
+		}
+	}
+
+	&__snippet {
+		font-size: var(--fs-500);
+		text-align: left;
+	}
+
+	//Changes the cta to white on medium and small devices
+	&__cta {
+		@include mq("small-medium") {
+			color: var(--clr-netural-1000);
+			border-color: var(--clr-netural-100);
+			&:hover {
+				background-color: var(--clr-secondary-100);
+				border-color: var(--clr-secondary-100);
+				color: var(--clr-neutral-1000);
+			}
+		}
+	}
+
+	&__abstract-bg {
+		bottom: 3em;
+	}
+}
+
+.features {
+	min-height: 100vh;
+
+	&__illustration {
+		width: 45%;
+		@include mq("all") {
+			width: 100%;
+		}
+		img {
+			margin: 0 auto;
+		}
+	}
+
+	&__cards {
+		margin-bottom: 4em;
+		width: 45%;
+		@include mq("all") {
+			width: 100%;
+		}
+	}
+}
