@@ -12,7 +12,7 @@ const Nav = () => {
 	} = useNavContext();
 	return (
 		<nav
-			className={`flex-row nav desktop-nav `}
+			className="flex-row nav desktop-nav"
 			id={`${linksColor}`}
 			data-aos="fade-down"
 			data-aos-duration="1000"

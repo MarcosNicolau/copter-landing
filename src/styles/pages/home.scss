@@ -1,14 +1,8 @@
 @use '../abstracts' as *;
 
 .hero {
-	min-height: 100vh;
 	@include mq("small-medium") {
 		color: white;
-	}
-
-	//Add margin bottom for the medium and small devices
-	@include mq("small-medium") {
-		margin-bottom: 20rem;
 	}
 
 	&__background {
@@ -38,7 +32,7 @@
 	&__title {
 		padding-top: 12em;
 		@include mq("small-medium") {
-			padding-top: 12em;
+			padding-top: 10em;
 		}
 		h1 {
 			margin-bottom: 0.5em;
@@ -64,13 +58,13 @@
 	}
 
 	&__abstract-bg {
+		position: absolute;
 		bottom: 3em;
+		left: -3em;
 	}
 }
 
 .features {
-	min-height: 100vh;
-
 	&__illustration {
 		width: 45%;
 		@include mq("all") {
@@ -81,11 +75,25 @@
 		}
 	}
 
+	&__cards-container {
+		flex-wrap: wrap;
+	}
+
 	&__cards {
 		margin-bottom: 4em;
 		width: 45%;
 		@include mq("all") {
 			width: 100%;
+		}
+	}
+}
+
+.security {
+	height: 100vh;
+	.security__cards {
+		@include mq("small-medium") {
+			width: 100%;
+			flex-wrap: wrap;
 		}
 	}
 }

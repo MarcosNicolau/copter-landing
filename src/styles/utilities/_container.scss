@@ -1,5 +1,19 @@
 @use '../abstracts' as *;
 .container {
-	max-width: 70%;
-	margin: 0 auto;
+	@include container;
+}
+
+//This class sets 100% width, overriding the body container
+.full-width {
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+
+.full-view {
+	min-height: 100vh;
+	margin-bottom: 12rem;
+	@include mq("small-medium") {
+		margin-bottom: 20rem;
+	}
 }

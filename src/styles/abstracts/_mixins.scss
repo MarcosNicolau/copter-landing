@@ -28,10 +28,28 @@
 		}
 	}
 
+	@if $point == "medium-large" {
+		@media screen and (min-width: $medium) and (max-width: $large) {
+			@content;
+		}
+	}
+
 	@if $point == "all" {
 		@media screen and (max-width: $large) {
 			@content;
 		}
+	}
+}
+
+@mixin container {
+	max-width: 70%;
+	margin: 0 auto;
+
+	@include mq("all") {
+		max-width: 85%;
+	}
+	@include mq("medium") {
+		max-width: 90%;
 	}
 }
 

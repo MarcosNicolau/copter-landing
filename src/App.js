@@ -18,6 +18,7 @@ const App = () => {
 			easing: "ease",
 			duration: 1200,
 			disable: "mobile",
+			offset: "100",
 		})
 	);
 	return (

@@ -24,7 +24,7 @@ const Hero = () => {
 
 	return (
 		<section>
-			<div className="hero">
+			<div className="hero full-view">
 				<div className="hero__background"></div>
 				<div className="hero__title">
 					<h1 data-aos="fade-up" data-aos-delay="300">
