@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 .card {
 	position: relative;
-	margin-bottom: 4rem;
 
 	img {
 		height: 3rem;
@@ -11,14 +10,12 @@
 	h4 {
 		margin-bottom: 0.3rem;
 		color: var(--clr-neutral-0);
-		font-weight: 700;
 	}
 
 	&__img-container {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		box-shadow: rgba(115, 115, 115, 0.15) 0px 2px 5px;
 	}
 }
 
@@ -26,14 +23,12 @@
 	display: grid;
 	grid-template-columns: auto auto;
 	place-items: center;
+	margin-bottom: 4rem;
 	@include mq("medium-large") {
 		width: 75%;
 	}
 	@include mq("small") {
 		grid-template-columns: auto;
-		justify-content: start;
-		align-content: start;
-		margin-bottom: 5rem;
 		text-align: center;
 	}
 	.card__img-container {
@@ -42,7 +37,7 @@
 			margin-bottom: 1rem;
 			margin-right: 0em;
 		}
-		@include icon-bg(var(--clr-neutral-970));
+		@include icon-bg(var(--clr-neutral-920));
 	}
 }
 
@@ -52,12 +47,12 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	background-color: var(--clr-neutral-970);
-	padding: 3rem 1rem;
-	border-radius: 0.9rem;
-	@include box-shadow;
 	flex: 0 0 18rem;
 	margin: 0 2em 5em;
+	padding: 3rem 1rem;
+	border-radius: 0.9rem;
+	background-color: var(--clr-neutral-970);
+	@include box-shadow;
 	.card__text {
 		width: 80%;
 		margin-top: 1rem;

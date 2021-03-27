@@ -1,16 +1,19 @@
-import abstractBackground from "../../../assets/backgrounds/abstract-left.svg";
-const AbstractBg = ({ bottom }) => {
+import abstractBackgroundLeft from "../../../assets/backgrounds/abstract-left.svg";
+import abstractBackgroundRight from "../../../assets/backgrounds/abstract-right.svg";
+const AbstractBg = ({ bottom, right }) => {
 	return (
-		<img
-			data-aos="fade-up"
-			data-aos-delay="300"
-			src={abstractBackground}
-			alt="abstract"
-			className="abstract-bg-left"
-			style={{
-				bottom,
-			}}
-		/>
+		<div className="full-width">
+			<img
+				data-aos="fade-up"
+				data-aos-delay="300"
+				src={right ? abstractBackgroundRight : abstractBackgroundLeft}
+				alt="abstract"
+				className={`${right ? "abstract-bg-right" : "abstract-bg-left"}`}
+				style={{
+					bottom,
+				}}
+			/>
+		</div>
 	);
 };
 

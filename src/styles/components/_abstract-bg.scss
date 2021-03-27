@@ -1,10 +1,10 @@
 @use '../abstracts' as *;
 
-.abstract-bg-rigth {
+.abstract-bg-right {
 	height: 28rem;
 	z-index: -100;
-	@include abs-positioning($right: -3rem);
-	@include mq("small-medium") {
+	@include abs-positioning($right: 0rem);
+	@include mq("all") {
 		display: none;
 	}
 }

@@ -1,6 +1,7 @@
 import Hero from "./hero";
 import Features from "./features";
 import Security from "./security";
+import StartOperate from "../shared/components/start-operate";
 
 const Home = () => {
 	return (
@@ -8,6 +9,7 @@ const Home = () => {
 			<Hero />
 			<Features />
 			<Security />
+			<StartOperate />
 		</>
 	);
 };

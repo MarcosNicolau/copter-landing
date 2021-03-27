@@ -80,10 +80,11 @@
 	background-color: $bg;
 }
 
-@mixin icon-bg($bg) {
-	padding: 1.1em;
+@mixin icon-bg($bg, $padding: 1.1rem) {
+	padding: $padding;
 	border-radius: 50%;
 	background-color: $bg;
+	box-shadow: rgba(115, 115, 115, 0.15) 0px 2px 5px;
 }
 
 @mixin box-shadow {

@@ -10,10 +10,24 @@
 	left: 0;
 }
 
-.full-view {
+.view-100-spacer {
+	margin-bottom: 5em;
 	min-height: 100vh;
-	margin-bottom: 12rem;
 	@include mq("small-medium") {
-		margin-bottom: 20rem;
+		margin-bottom: 8em;
+	}
+}
+
+.view-100 {
+	min-height: 100vh;
+	@include mq("small-medium") {
+		margin-bottom: 8em;
+	}
+}
+
+.view-75 {
+	min-height: 75vh;
+	@include mq("small-medium") {
+		margin-bottom: 3em;
 	}
 }
