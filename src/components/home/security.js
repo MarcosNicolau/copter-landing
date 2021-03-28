@@ -8,7 +8,7 @@ import AbstractBg from "../shared/components/abstract-bg";
 const Security = () => {
 	return (
 		<section>
-			<div className="security view-75">
+			<div className="container security">
 				<SectionTitle title="Nos aseguramos de tu seguridad">
 					Contrary to popular belief, Lorem Ipsum is not simply random text. Just dummy
 					text.

@@ -15,21 +15,16 @@ const MobileNav = () => {
 
 	//Disable scroll on mobile-nav open
 	useEffect(() => {
-		if (isNavOpen) return (document.body.style.overflow = "hidden");
+		if (isNavOpen) return (document.body.style.overflowY = "hidden");
 		document.body.style.overflow = "";
 	}, [isNavOpen]);
 
 	return (
-		<div
-			className="mobile-nav-container"
-			id={`${isNavOpen && "mobile-nav-container--show"}`}
-			data-aos="fade-down"
-			data-aos-duration="1200"
-		>
-			<div className="flex-row-between container mobile-nav ">
+		<div className="mobile-nav-container" data-aos="fade-down" data-aos-duration="1200">
+			<div className="flex-row-between mobile-nav">
 				<img
 					src={areImgsLight ? fullLogoLight : fullLogo}
-					alt="hamburguer"
+					alt="logo"
 					className="mobile-nav__logo"
 				/>
 				<img
@@ -38,8 +33,8 @@ const MobileNav = () => {
 					onClick={setNavState}
 					className="padding-100"
 				/>
-				<MobileNavMenu setNavState={setNavState} isNavOpen={isNavOpen} />
 			</div>
+			<MobileNavMenu setNavState={setNavState} isNavOpen={isNavOpen} />
 		</div>
 	);
 };

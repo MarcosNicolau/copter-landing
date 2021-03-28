@@ -1,51 +1,44 @@
 @use '../../abstracts' as *;
 
 .desktop-nav {
+	//Display only on desktop and large devices
 	@include mq("small-medium") {
 		display: none;
 	}
 }
 
-.nav {
-	align-items: center;
-	justify-content: space-between;
-	margin-top: 1em;
-	font-size: var(--fs-450);
+.nav-container {
+	position: relative;
+}
 
-	.nav__logo {
+.nav {
+	position: absolute;
+	margin-top: 1rem;
+	font-size: var(--fs-450);
+	width: 100%;
+
+	&__logo {
 		height: 2.5rem;
 	}
 
 	ul {
-		list-style: none;
-		padding: 0;
 		& > * {
 			margin: 0em 1em;
 			cursor: default;
 		}
 	}
 
-	.nav__links {
-		position: relative;
+	&__links {
 		@include pseudo($loc: "after") {
 			height: 0.1rem;
 			width: 0%;
-			background-color: var(--clr-primary-100);
-			@include transition(width, 250ms);
+			background-color: var(--clr-neutral-1000);
+			@include transition;
 		}
 
 		&:hover::after {
 			width: 100%;
-			@include transition(width, 250ms);
-		}
-	}
-
-	.nav__active-link {
-		@include pseudo($loc: "after") {
-			height: 0.1rem;
-			width: 100%;
-			background-color: var(--clr-primary-100);
-			@include transition(width, 250ms);
+			@include transition;
 		}
 	}
 }

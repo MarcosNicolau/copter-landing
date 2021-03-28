@@ -7,7 +7,7 @@ import AbstractBg from "./abstract-bg";
 const StartOperate = () => {
 	return (
 		<section>
-			<div className="view-75 start-operate">
+			<div className="space start-operate container">
 				<SectionTitle title="Comenzar a operar nunca fue tan facil">
 					Contrary to popular belief, Lorem Ipsum is not simply random text. Just dummy
 					text.

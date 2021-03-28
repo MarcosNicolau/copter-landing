@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
 body {
-	@include container;
 }
 
 ::-moz-selection {

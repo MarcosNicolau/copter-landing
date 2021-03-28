@@ -2,6 +2,7 @@
 
 .start-operate {
 	&__steps {
+		flex-wrap: nowrap;
 		@include mq("small-medium") {
 			display: block;
 		}
@@ -12,7 +13,7 @@
 		text-align: center;
 		color: var(--clr-primary-200);
 		@include mq("small-medium") {
-			margin: 5rem;
+			margin: 4rem;
 		}
 	}
 

@@ -10,24 +10,17 @@
 	left: 0;
 }
 
-.view-100-spacer {
-	margin-bottom: 5em;
-	min-height: 100vh;
-	@include mq("small-medium") {
-		margin-bottom: 8em;
-	}
-}
-
 .view-100 {
+	margin-bottom: 10rem;
 	min-height: 100vh;
 	@include mq("small-medium") {
 		margin-bottom: 8em;
 	}
 }
 
-.view-75 {
-	min-height: 75vh;
+.space {
+	margin: 15rem auto;
 	@include mq("small-medium") {
-		margin-bottom: 3em;
+		margin: 5rem auto;
 	}
 }

@@ -12,32 +12,31 @@
 	text-align: center;
 	border-radius: 0.9rem;
 	padding: 0.5rem 1.25rem;
-	cursor: pointer;
 }
 
 .auth {
-	border: solid 0.09rem #ffffff;
 	font-size: var(--fs-430);
 	font-weight: 700;
-	width: 8rem;
 	letter-spacing: 0.02rem;
+	min-width: 8rem;
 	margin: 0.5rem;
+	border: solid 0.09rem var(--clr-netural-1000);
 	@include transition(opacity);
 	&:hover {
-		opacity: 0.85;
+		opacity: 0.8;
 		@include transition(opacity);
 	}
 }
 
 .cta {
-	border: solid 0.15rem;
-	text-transform: uppercase;
-	font-size: var(--fs-500);
-	font-weight: 500;
-	letter-spacing: 0.05rem;
-	padding: 0.6rem 2rem;
+	font-weight: 600;
 	margin-top: 3.5rem;
+	padding: 0.7rem 2.5rem;
+	border: solid 0.15rem;
 	border-radius: 1.3rem;
+	font-size: var(--fs-500);
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
 	@include transition;
 	&:hover {
 		@include transition;
@@ -45,24 +44,26 @@
 }
 
 .cta-violet {
-	border-color: var(--clr-secondary-100);
-	color: var(--clr-secondary-100);
+	border-color: var(--clr-secondary-150);
+	background-color: var(--clr-secondary-150);
+	color: var(--clr-neutral-1000);
+	@include box-shadow($color: rgba(255, 255, 255, 0.16));
 	&:hover {
-		background-color: var(--clr-secondary-100);
-		color: var(--clr-neutral-1000);
-		text-shadow: 0 0 2px var(--clr-neutral-1000);
+		@include btn-hover(
+			var(--clr-primary-200),
+			var(--clr-neutral-1000),
+			var(--clr-neutral-1000)
+		);
 	}
 }
 
 .cta-white {
-	color: var(--clr-netural-1000);
-	border-color: var(--clr-netural-100);
-
-	@include transition;
+	border-color: var(--clr-neutral-1000);
+	background-color: var(--clr-neutral-1000);
+	color: var(--clr-secondary-200);
+	@include box-shadow($color: rgba(188, 176, 255, 0.507));
 	&:hover {
-		background-color: var(--clr-secondary-100);
-		color: var(--clr-neutral-1000);
+		@include btn-hover(transparent, var(--clr-neutral-1000), var(--clr-neutral-1000));
 		text-shadow: 0 0 2px var(--clr-neutral-1000);
-		@include transition;
 	}
 }

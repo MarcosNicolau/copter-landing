@@ -9,7 +9,7 @@ import SectionTitle from "../shared/components/section-title";
 const Features = () => {
 	return (
 		<section>
-			<div className="view-100-spacer features">
+			<div className="view-100 container features">
 				<SectionTitle title="Todo lo que necesitas para comenzar">
 					Contrary to popular belief, Lorem Ipsum is not simply random text. Just dummy
 					text.

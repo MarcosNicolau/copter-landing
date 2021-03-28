@@ -1,17 +1,17 @@
 @use '../../abstracts' as *;
 
 .mobile-nav-container {
-	position: absolute;
-	left: 0;
-	overflow: hidden;
-	width: 100%;
 	display: none;
+	position: relative;
+	//Display only in small and medium devices
 	@include mq("small-medium") {
 		display: block;
 	}
 }
 
 .mobile-nav {
+	position: absolute;
+	width: 100%;
 	padding-top: 2rem;
 	.mobile-nav__logo {
 		height: 2rem;
@@ -24,38 +24,39 @@
 	width: 100%;
 	margin: 0;
 	padding: 2rem 3rem;
-	@include abs-positioning($top: 0, $left: 0);
+	position: fixed;
+	top: 0;
+	left: 0;
 
 	&__top {
-		padding: 0 1rem;
-		margin-bottom: 5em;
+		margin-bottom: 5rem;
 	}
 
-	.mobile-nav-menu__links-container {
-		margin: 0em auto 2em;
+	&__links-container {
+		margin: 0em auto 2rem;
 		width: 75%;
-		max-height: 26rem;
+		max-height: 50%;
 		overflow-y: auto;
 		align-items: center;
 		& > * {
 			text-align: center;
-			margin: 0 0 3em;
-		}
-		ul {
-			& > * {
-				margin-bottom: 0.5em;
-			}
+			margin: 0 0 3rem;
 		}
 		@include mq("medium") {
 			width: 50%;
 		}
 	}
 
+	&__dropdown-links {
+		li {
+			margin-bottom: 0.5rem;
+		}
+	}
+
 	h5 {
 		font-weight: 600;
-		padding-bottom: 0.5em;
-		margin: 0 0 1rem 0;
-		width: 100%;
+		padding-bottom: 0.5rem;
+		margin-bottom: 1rem;
 		border-bottom: 0.1rem solid var(--clr-neutral-1000);
 	}
 }
@@ -70,8 +71,4 @@
 	visibility: hidden;
 	transform: translateX(100%);
 	@include transition;
-}
-
-#mobile-nav-container--show {
-	min-height: 100vh;
 }
