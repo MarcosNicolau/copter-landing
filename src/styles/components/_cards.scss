@@ -61,6 +61,6 @@
 	.card__img-container {
 		position: absolute;
 		top: -2.5rem;
-		@include icon-bg(var(--clr-secondary-100));
+		@include icon-bg(var(--clr-secondary-300));
 	}
 }

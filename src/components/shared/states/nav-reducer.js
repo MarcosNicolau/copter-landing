@@ -1,8 +1,20 @@
+import logoBlue from "../../../assets/company/logo.svg";
+import logoLight from "../../../assets/company/logo-light.svg";
+import dropdownBlue from "../../../assets/miscellaneous/navigation/dropdown.svg";
+import dropdownLight from "../../../assets/miscellaneous/navigation/dropdown-light.svg";
+import fullLogoBlue from "../../../assets/company/full-logo.svg";
+import fullLogoLight from "../../../assets/company/full-logo-light.svg";
+import hamburguerBlue from "../../../assets/miscellaneous/navigation/hamburguer.svg";
+import hamburguerLight from "../../../assets/miscellaneous/navigation/hamburguer-light.svg";
+
 const navState = {
 	linksColor: "text-neutral-1000",
-	areImgsLight: true,
-	loginColor: "button auth auth--light",
-	registerColor: "button auth auth--light bg-neutral-1000 text-primary-100",
+	logo: logoLight,
+	fullLogo: fullLogoLight,
+	dropdown: dropdownLight,
+	hamburguer: hamburguerLight,
+	loginColor: "button auth",
+	registerColor: "button auth auth--light",
 };
 
 const navActions = {
@@ -15,16 +27,22 @@ const navReducer = (state, action) => {
 		case navActions.SET_BLUE_NAV:
 			return {
 				linksColor: "text-primary-100",
-				areImgsLight: false,
+				logo: logoBlue,
+				fullLogo: fullLogoBlue,
+				dropdown: dropdownBlue,
+				hamburguer: hamburguerBlue,
 				loginColor: "button auth",
-				registerColor: "auth button bg-primary-100 text-neutral-1000",
+				registerColor: "button auth auth--blue",
 			};
 		case navActions.SET_LIGHT_NAV:
 			return {
 				linksColor: "text-neutral-1000",
-				areImgsLight: true,
+				logo: logoBlue,
+				fullLogo: fullLogoBlue,
+				dropdown: dropdownBlue,
+				hamburguer: hamburguerBlue,
 				loginColor: "button auth auth--light",
-				registerColor: "button auth auth--light bg-neutral-1000 text-primary-100",
+				registerColor: "button auth auth--light",
 			};
 		default:
 			return state;

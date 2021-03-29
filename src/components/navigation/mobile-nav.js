@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavContext } from "../shared/states/nav-context";
 import MobileNavMenu from "./mobile-nav-menu";
-import fullLogo from "../../assets/company/full-logo.svg";
-import fullLogoLight from "../../assets/company/full-logo-light.svg";
-import hamburguer from "../../assets/miscellaneous/navigation/hamburguer.svg";
-import hamburguerLight from "../../assets/miscellaneous/navigation/hamburguer-light.svg";
 
 const MobileNav = () => {
 	const [isNavOpen, setNavOpen] = useState(false);
 	const {
-		state: { areImgsLight },
+		state: { fullLogo, hamburguer },
 	} = useNavContext();
 	const setNavState = () => setNavOpen((prev) => !prev);
 
@@ -22,13 +18,9 @@ const MobileNav = () => {
 	return (
 		<div className="mobile-nav-container" data-aos="fade-down" data-aos-duration="1200">
 			<div className="flex-row-between mobile-nav">
+				<img src={fullLogo} alt="logo" className="mobile-nav__logo" />
 				<img
-					src={areImgsLight ? fullLogoLight : fullLogo}
-					alt="logo"
-					className="mobile-nav__logo"
-				/>
-				<img
-					src={areImgsLight ? hamburguerLight : hamburguer}
+					src={hamburguer}
 					alt="open nav"
 					onClick={setNavState}
 					className="padding-100"

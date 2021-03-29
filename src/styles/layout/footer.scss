@@ -1,0 +1,46 @@
+@use '../abstracts'  as *;
+.footer {
+	::selection {
+		background-color: var(--clr-neutral-1000);
+		color: var(--clr-primary-100);
+	}
+	min-height: 60vh;
+	justify-content: center;
+	padding: 5rem 0;
+
+	&__top {
+		padding: 0 2rem 2rem;
+		margin-bottom: 2rem;
+		border-bottom: solid 0.09rem var(--clr-neutral-1000);
+		@include mq("all") {
+			justify-content: center;
+		}
+	}
+
+	&__logo {
+		margin-bottom: 2rem;
+		height: 2.5rem;
+	}
+
+	&__links {
+		margin: 2rem 2rem 1rem;
+		h5 {
+			margin-bottom: 0.6rem;
+			font-weight: 700;
+		}
+		a {
+			margin-bottom: 0.3rem;
+			&:hover {
+				color: var(--clr-secondary-200);
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__contact {
+		margin: 0.8rem;
+		a {
+			margin: 0 0.5rem;
+		}
+	}
+}

@@ -61,8 +61,8 @@ p {
 
 .snippet {
 	font-size: var(--fs-480);
-	font-weight: 500;
-	color: var(--clr-secondary-100);
+	font-weight: 600;
+	color: var(--clr-secondary-300);
 	text-align: center;
 	@include mq("medium") {
 		font-size: var(--fs-450);

@@ -10,6 +10,7 @@ import NavContextProvider from "./components/shared/states/nav-context";
 //Pages
 import Navigation from "./components/navigation";
 import Home from "./components/home";
+import Footer from "./components/footer";
 
 const App = () => {
 	useEffect(() =>
@@ -29,6 +30,7 @@ const App = () => {
 					<Route exact path="/" component={Home} />
 				</Switch>
 			</NavContextProvider>
+			<Footer />
 		</Router>
 	);
 };

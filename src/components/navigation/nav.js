@@ -2,12 +2,10 @@ import { useNavContext } from "../shared/states/nav-context";
 import Dropdown from "./dropdown";
 import CotizationsLinks from "./dropdown-links/cotizations-links";
 import AuthBtns from "./auth-btns";
-import logo from "../../assets/company/logo.svg";
-import logoLight from "../../assets/company/logo-light.svg";
 
 const Nav = () => {
 	const {
-		state: { linksColor, areImgsLight },
+		state: { linksColor, logo },
 	} = useNavContext();
 	return (
 		<div className="nav-container" data-aos="fade-down" data-aos-duration="1000">
@@ -15,11 +13,7 @@ const Nav = () => {
 				<ul className="flex-row-center">
 					<li>
 						<a className="nav__link" href="/">
-							<img
-								src={areImgsLight ? logoLight : logo}
-								alt="logo"
-								className="nav__logo"
-							/>
+							<img src={logo} alt="logo" className="nav__logo" />
 						</a>
 					</li>
 					<li>

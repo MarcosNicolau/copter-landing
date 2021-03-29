@@ -30,7 +30,7 @@ const MobileNavMenu = ({ isNavOpen, setNavState }) => {
 					<CotizationsLinks />
 				</ul>
 			</ul>
-			<AuthBtns isMobileNav={"true"} />
+			<AuthBtns />
 		</div>
 	);
 };
