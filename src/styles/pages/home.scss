@@ -24,6 +24,7 @@
 	}
 
 	&__title {
+		z-index: 1;
 		@include mq("all") {
 			margin-bottom: 5rem;
 		}
