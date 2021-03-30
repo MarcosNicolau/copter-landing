@@ -1,3 +1,4 @@
+import React from "react";
 import joinUsIllustration from "../../assets/illustrations/home/join-us.svg";
 const CTA = () => {
 	return (

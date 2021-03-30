@@ -1,7 +1,7 @@
+import React from "react";
 import fullLogoLight from "../assets/company/full-logo-light.svg";
 import facebook from "../assets/company/contact/facebook.svg";
 import instagram from "../assets/company/contact/instagram.svg";
-import twitter from "../assets/company/contact/twitter.svg";
 import linkedin from "../assets/company/contact/linkedin.svg";
 
 const Footer = () => {

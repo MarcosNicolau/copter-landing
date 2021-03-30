@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import navReducer, { navState, navActions } from "./nav-reducer";
 
 const NavContext = createContext("");

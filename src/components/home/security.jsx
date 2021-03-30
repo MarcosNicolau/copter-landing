@@ -1,9 +1,10 @@
-import SectionTitle from "../shared/components/section-title";
-import Card from "../shared/components/card";
+import React from "react";
+import SectionTitle from "../shared/components/section-title.jsx";
+import Card from "../shared/components/card.jsx";
+import AbstractBg from "../shared/components/abstract-bg.jsx";
 import validationIcon from "../../assets/icons/home/security/validation.svg";
 import simplicityIcon from "../../assets/icons/home/security/simplicity.svg";
 import trustIcon from "../../assets/icons/home/security/trust.svg";
-import AbstractBg from "../shared/components/abstract-bg";
 
 const Security = () => {
 	return (

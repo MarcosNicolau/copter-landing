@@ -1,7 +1,18 @@
 {
-	"rules": {
-		"eqeqeq": "off",
-		"curly": "off"
+	"env": {
+		"browser": true,
+		"es6": true
 	},
-	"parser": "babel-eslint"
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"plugins": ["react"],
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"rules": {
+		"react/jsx-uses-react": 1,
+		"react/jsx-uses-vars": "warn",
+		"react/prop-types": 0,
+		"no-unused-vars": "warn"
+	}
 }

@@ -1,16 +1,20 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import Aos from "aos";
 import "./styles/style.scss";
 import "aos/dist/aos.css";
 
 //Contexts
 import NavContextProvider from "./components/shared/states/nav-context";
+import PriceContextProvider from "./components/cotizations/price/price-context";
+
+//Nav and footer
+import Navigation from "./components/navigation";
+import Footer from "./components/footer.jsx";
 
 //Pages
-import Navigation from "./components/navigation";
 import Home from "./components/home";
-import Footer from "./components/footer";
+import BitcoinCotization from "./components/cotizations/bitcoin";
 
 const App = () => {
 	useEffect(() =>
@@ -28,6 +32,9 @@ const App = () => {
 				<Navigation />
 				<Switch>
 					<Route exact path="/" component={Home} />
+					<PriceContextProvider>
+						<Route exact path="/cotizaciones/bitcoin" component={BitcoinCotization} />
+					</PriceContextProvider>
 				</Switch>
 			</NavContextProvider>
 			<Footer />

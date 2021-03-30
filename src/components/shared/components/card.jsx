@@ -1,3 +1,5 @@
+import React from "react";
+
 const Card = ({ title, icon, type, children }) => {
 	return (
 		<div className="card" id={type} data-aos="fade-up">

@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+.price {
+	color: var(--clr-neutral-1000);
+	min-height: 100vh;
+	position: relative;
+	background-size: cover;
+	background-image: url("../../assets/backgrounds/cotization.svg");
+	background-color: var(--clr-primary-100);
+
+	&__container {
+		flex-wrap: nowrap;
+		min-height: 100vh;
+		padding: 8rem 0;
+	}
+
+	&__title {
+		text-align: center;
+		color: var(--clr-neutral-1000);
+		margin-bottom: 2rem;
+	}
+
+	&__crypto-logo {
+		margin-right: 5rem;
+		@include mq("all") {
+			display: none;
+		}
+	}
+
+	&__prices {
+		text-align: center;
+		margin-bottom: 2rem;
+		@include mq("small-medium") {
+			flex-direction: column;
+		}
+		& > * {
+			margin: 1rem 2rem;
+		}
+	}
+
+	&__currency-selection {
+		width: 10rem;
+		margin-top: 0.5rem;
+		border: none;
+		border-bottom: 0.2rem solid var(--clr-neutral-1000);
+		color: var(--clr-neutral-1000);
+		background-color: var(--clr-primary-100);
+		@include transition;
+
+		&:hover {
+			opacity: 0.8;
+			@include transition;
+		}
+	}
+}

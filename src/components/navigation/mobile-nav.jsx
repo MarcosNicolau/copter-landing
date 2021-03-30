@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavContext } from "../shared/states/nav-context";
-import MobileNavMenu from "./mobile-nav-menu";
+import MobileNavMenu from "./mobile-nav-menu.jsx";
 
 const MobileNav = () => {
 	const [isNavOpen, setNavOpen] = useState(false);
@@ -19,12 +19,7 @@ const MobileNav = () => {
 		<div className="mobile-nav-container" data-aos="fade-down" data-aos-duration="1200">
 			<div className="flex-row-between mobile-nav">
 				<img src={fullLogo} alt="logo" className="mobile-nav__logo" />
-				<img
-					src={hamburguer}
-					alt="open nav"
-					onClick={setNavState}
-					className="padding-100"
-				/>
+				<img src={hamburguer} alt="open nav" onClick={setNavState} />
 			</div>
 			<MobileNavMenu setNavState={setNavState} isNavOpen={isNavOpen} />
 		</div>

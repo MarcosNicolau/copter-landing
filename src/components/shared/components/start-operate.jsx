@@ -1,3 +1,4 @@
+import React from "react";
 import SectionTitle from "./section-title";
 import budgetIcon from "../../../assets/icons/budget.svg";
 import buyCryptosIcon from "../../../assets/icons/buy-cryptos.svg";

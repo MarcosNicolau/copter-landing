@@ -1,7 +1,8 @@
+import React from "react";
 import { useNavContext } from "../shared/states/nav-context";
-import Dropdown from "./dropdown";
-import CotizationsLinks from "./dropdown-links/cotizations-links";
-import AuthBtns from "./auth-btns";
+import Dropdown from "./dropdown.jsx";
+import CotizationsLinks from "./dropdown-links/cotizations-links.jsx";
+import AuthBtns from "./auth-btns.jsx";
 
 const Nav = () => {
 	const {

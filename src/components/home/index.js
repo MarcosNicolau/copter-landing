@@ -1,8 +1,9 @@
-import Hero from "./hero";
-import Features from "./features";
-import Security from "./security";
-import StartOperate from "../shared/components/start-operate";
-import Cta from "./cta";
+import React from "react";
+import Hero from "./hero.jsx";
+import Features from "./features.jsx";
+import Security from "./security.jsx";
+import StartOperate from "../shared/components/start-operate.jsx";
+import Cta from "./cta.jsx";
 
 const Home = () => {
 	return (

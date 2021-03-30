@@ -1,3 +1,4 @@
+import React from "react";
 import abstractBackgroundLeft from "../../../assets/backgrounds/abstract-left.svg";
 import abstractBackgroundRight from "../../../assets/backgrounds/abstract-right.svg";
 const AbstractBg = ({ bottom, right }) => {

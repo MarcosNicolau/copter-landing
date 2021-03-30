@@ -1,10 +1,11 @@
+import React from "react";
 import featureIllustration from "../../assets/illustrations/home/features.svg";
 import controlIcon from "../../assets/icons/home/features/control.svg";
 import evaluationIcon from "../../assets/icons/home/features/evaluation.svg";
 import protectionIcon from "../../assets/icons/home/features/protection.svg";
 import calendarIcon from "../../assets/icons/home/features/calendar.svg";
-import Card from "../shared/components/card";
-import SectionTitle from "../shared/components/section-title";
+import Card from "../shared/components/card.jsx";
+import SectionTitle from "../shared/components/section-title.jsx";
 
 const Features = () => {
 	return (

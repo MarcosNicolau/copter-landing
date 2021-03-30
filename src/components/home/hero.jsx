@@ -1,16 +1,18 @@
+import React, { useEffect, useRef } from "react";
 import heroIllustration from "../../assets/illustrations/home/hero.svg";
 import fullLogoLight from "../../assets/company/full-logo-light.svg";
 import drawCanvas from "./canvas";
-import { useEffect, useRef } from "react";
 
 const Hero = () => {
 	const canvas = useRef();
+	const canvasResize = (e) => {
+		if (e.target.innerWidth <= 1000) return;
+		drawCanvas(canvas.current, e.target.innerWidth);
+	};
 	useEffect(() => {
 		drawCanvas(canvas.current, window.innerWidth);
-		window.addEventListener("resize", (e) => {
-			if (e.target.innerWidth <= 1000) return;
-			drawCanvas(canvas.current, e.target.innerWidth);
-		});
+		const canvasInterval = window.addEventListener("resize", canvasResize);
+		return () => window.clearInterval(canvasInterval);
 	}, [canvas.current]);
 
 	return (

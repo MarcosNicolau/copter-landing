@@ -23,6 +23,7 @@ h1 {
 
 h2 {
 	font-size: var(--fs-750);
+	font-weight: 500;
 }
 
 h3 {
@@ -54,7 +55,6 @@ p {
 
 .title {
 	text-align: center;
-	font-weight: 500;
 	color: var(--clr-primary-200);
 	margin-bottom: 0.1em;
 }

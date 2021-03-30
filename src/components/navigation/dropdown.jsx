@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavContext } from "../shared/states/nav-context";
 
 const Dropdown = ({ children, type }) => {

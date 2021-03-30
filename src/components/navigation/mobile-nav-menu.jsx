@@ -1,5 +1,6 @@
-import CotizationsLinks from "./dropdown-links/cotizations-links";
-import AuthBtns from "./auth-btns";
+import React from "react";
+import CotizationsLinks from "./dropdown-links/cotizations-links.jsx";
+import AuthBtns from "./auth-btns.jsx";
 import close from "../../assets/miscellaneous/navigation/close.svg";
 import logoLight from "../../assets/company/logo-light.svg";
 
