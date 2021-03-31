@@ -1,5 +1,5 @@
 import React from "react";
-import { usePriceContext } from "./price-context";
+import { usePriceContext } from "./context";
 
 const Price = () => {
 	const { state, dispatch, priceActions } = usePriceContext();
@@ -17,7 +17,7 @@ const Price = () => {
 		<section>
 			<div className="price">
 				<div className="price__background"></div>
-				<div className="container flex-row-center price__container">
+				<div className="container flex-row-center price__container view-100">
 					<img
 						src={cryptoInitialImg}
 						alt="crypto"

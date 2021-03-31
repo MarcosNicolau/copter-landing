@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
-import priceReducer, { priceState, priceActions } from "./price-reducer";
+import priceReducer, { priceState, priceActions } from "./reducer";
 
 const PriceContext = createContext("");
 const usePriceContext = () => useContext(PriceContext);

@@ -6,7 +6,9 @@ import "aos/dist/aos.css";
 
 //Contexts
 import NavContextProvider from "./components/shared/states/nav-context";
-import PriceContextProvider from "./components/cotizations/price/price-context";
+import PriceContextProvider from "./components/cotizations/price/context";
+import ChartContextProvider from "./components/cotizations/chart/context";
+import CryptoExplanationContextProvider from "./components/cotizations/crypto-explanation/context";
 
 //Nav and footer
 import Navigation from "./components/navigation";
@@ -33,7 +35,15 @@ const App = () => {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<PriceContextProvider>
-						<Route exact path="/cotizaciones/bitcoin" component={BitcoinCotization} />
+						<ChartContextProvider>
+							<CryptoExplanationContextProvider>
+								<Route
+									exact
+									path="/cotizaciones/bitcoin"
+									component={BitcoinCotization}
+								/>
+							</CryptoExplanationContextProvider>
+						</ChartContextProvider>
 					</PriceContextProvider>
 				</Switch>
 			</NavContextProvider>
