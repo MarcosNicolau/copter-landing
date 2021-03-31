@@ -35,7 +35,7 @@ const BitcoinCotization = () => {
 		});
 	}, [dispatch, priceActions]);
 
-	//Once the crypto is setted, we start the connection
+	//// Once the crypto is setted, we start the connection
 	useEffect(() => {
 		if (!priceState.crypto) return;
 		setSocketConnection();
