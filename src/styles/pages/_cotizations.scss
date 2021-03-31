@@ -96,10 +96,6 @@
 
 .explanation {
 	margin-bottom: 10rem;
-	flex-wrap: nowrap;
-	@include mq("small-medium") {
-		flex-wrap: wrap;
-	}
 	img {
 		max-width: 90%;
 	}
