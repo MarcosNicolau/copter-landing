@@ -10,8 +10,8 @@ const ChartContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(chartReducer, chartState);
 
 	const getChartData = async (crypto, timestamp) => {
-		const endpoint = `https://api.nomics.com/v1/currencies/sparkline?key=bf9f0c31c249c5c9e54460e195c82482&ids=${crypto}&start=${timestamp}T00%3A00%3A00Z`;
-		const res = await axios.get(endpoint);
+		const endpoint = `/get-chart-data`;
+		const res = await axios.post(endpoint, { crypto, timestamp });
 		const timestamps = res.data[0].timestamps.map((timestamp) =>
 			new Date(timestamp).toDateString()
 		);

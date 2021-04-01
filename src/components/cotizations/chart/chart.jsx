@@ -25,7 +25,7 @@ const CryptoChart = () => {
 
 	return (
 		<section>
-			<div className="container flex-column-center view-100">
+			<div className="container flex-column-center space">
 				<h4 className="title chart__title">La cotizacion de {name} en un grafico</h4>
 				<div className="chart text-neutral-200">
 					<div className="flex-row align-center chart__legend">
