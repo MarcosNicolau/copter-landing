@@ -1,0 +1,119 @@
+@use '../abstracts' as *;
+
+.price {
+	color: var(--clr-neutral-1000);
+	min-height: 100vh;
+	position: relative;
+	background-size: cover;
+	background-image: url("../../assets/backgrounds/cotization.svg");
+	background-color: var(--clr-primary-100);
+
+	&__container {
+		flex-wrap: nowrap;
+		min-height: 100vh;
+		padding: 8rem 0;
+	}
+
+	&__title {
+		text-align: center;
+		color: var(--clr-neutral-1000);
+		margin-bottom: 2rem;
+	}
+
+	&__crypto-logo {
+		margin-right: 5rem;
+		@include mq("all") {
+			display: none;
+		}
+	}
+
+	&__prices {
+		text-align: center;
+		margin-bottom: 2rem;
+		@include mq("small-medium") {
+			flex-direction: column;
+		}
+		& > * {
+			margin: 1rem 2rem;
+		}
+	}
+
+	&__currency-selection {
+		width: 10rem;
+		margin-top: 0.5rem;
+		border: none;
+		border-bottom: 0.2rem solid var(--clr-neutral-1000);
+		color: var(--clr-neutral-1000);
+		background-color: var(--clr-primary-100);
+		@include transition;
+
+		&:hover {
+			opacity: 0.8;
+			@include transition;
+		}
+	}
+}
+
+.chart {
+	width: 75%;
+	min-height: 30rem;
+	background-color: var(--clr-neutral-970);
+	padding: 2rem;
+	border-radius: 1rem;
+	@include box-shadow;
+	@include mq("small-medium") {
+		width: 100%;
+	}
+
+	&__legend {
+		margin-bottom: 1rem;
+		img {
+			height: 3rem;
+		}
+	}
+
+	&__title {
+		margin-bottom: 2rem;
+	}
+
+	&__timestamps {
+		justify-content: flex-end;
+		flex-wrap: nowrap;
+		button {
+			margin: 2rem 0rem 1rem;
+			background-color: transparent;
+			border: none;
+			outline: none;
+			&:hover {
+				text-decoration: underline;
+				color: var(--clr-neutral-600);
+			}
+		}
+	}
+
+	&__active-timestamp {
+		text-decoration: underline;
+		color: var(--clr-neutral-600);
+	}
+}
+
+.explanation {
+	margin-bottom: 10rem;
+	img {
+		max-width: 90%;
+	}
+	&__description {
+		margin-top: 2rem;
+		margin-left: 5rem;
+		width: 30%;
+		text-align: center;
+
+		@include mq("small-medium") {
+			width: 75%;
+			margin-left: 0rem;
+		}
+		p {
+			font-size: 1.1rem;
+		}
+	}
+}

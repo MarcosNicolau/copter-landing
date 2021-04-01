@@ -1,0 +1,31 @@
+/*=============
+Typography scale declaration:
+    *Starts on 55px and goes down 5 by 5;
+===============*/
+$type-scale: (
+	small: (
+		850: 2.5rem,
+		750: 2.1875rem,
+		500: 1.125rem,
+		480: 1rem,
+	),
+	medium: (
+		850: 3.125rem,
+		750: 2.5rem,
+		600: 1.5625rem,
+		480: 1rem,
+	),
+	big: (
+		850: 3.4375rem,
+		800: 3.125rem,
+		750: 2.8125rem,
+		700: 2.5rem,
+		650: 2.1875rem,
+		600: 1.875rem,
+		550: 1.5625rem,
+		500: 1.25rem,
+		480: 1.125rem,
+		460: 1rem,
+		430: 0.8125rem,
+	),
+);

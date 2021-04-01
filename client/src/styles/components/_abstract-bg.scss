@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.abstract-bg-right {
+	height: 28rem;
+	z-index: -100;
+	@include abs-positioning($right: 0rem);
+	@include mq("all") {
+		display: none;
+	}
+}
+
+.abstract-bg-left {
+	height: 28rem;
+	z-index: -100;
+	@include abs-positioning($left: -3em);
+	@include mq("all") {
+		display: none;
+	}
+}

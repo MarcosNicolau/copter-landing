@@ -1,0 +1,91 @@
+@use '../abstracts' as *;
+
+.hero {
+	canvas {
+		position: absolute;
+	}
+	color: var(--clr-neutral-1000);
+	background: linear-gradient(180deg, var(--clr-primary-100) 0%, #746bff 100%);
+	position: relative;
+	overflow: hidden;
+
+	&__container {
+		min-height: 90vh;
+		padding: 10rem 0rem 5rem;
+	}
+
+	.universe {
+		position: absolute;
+		bottom: 0rem;
+		right: 0rem;
+		@include mq("all") {
+			height: 10rem;
+		}
+	}
+
+	&__title {
+		z-index: 1;
+		@include mq("all") {
+			margin-bottom: 5rem;
+		}
+		h1 {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__logo {
+		height: 3.2rem;
+		margin-top: 1.5rem;
+	}
+
+	&__snippet {
+		font-size: var(--fs-500);
+		text-align: left;
+	}
+}
+
+.features {
+	&__illustration {
+		width: 45%;
+		@include mq("all") {
+			width: 100%;
+		}
+		img {
+			margin: 0 auto;
+		}
+	}
+
+	&__cards {
+		margin-bottom: 4em;
+		width: 45%;
+		@include mq("all") {
+			width: 100%;
+		}
+	}
+}
+
+.home-cta {
+	padding-top: 2rem;
+	overflow: hidden;
+	@include mq("small") {
+		min-height: 100vh;
+	}
+
+	&__text {
+		margin: 0 auto;
+		@include mq("small") {
+			margin: auto 0;
+		}
+	}
+
+	&__img-container {
+		margin-left: auto;
+		margin-top: auto;
+		img {
+			margin-left: auto;
+			@include mq("medium-large") {
+				margin: auto 0;
+			}
+		}
+	}
+}

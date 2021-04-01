@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+
+@each $shade, $colors in $colors {
+	@each $prop, $value in $colors {
+		@if type-of($value) == map {
+			@each $second-prop, $final-value in $value {
+				.text-#{$shade}-#{$prop}-#{$second-prop} {
+					color: #{$final-value};
+				}
+			}
+		} @else {
+			.text-#{$shade}-#{$prop} {
+				color: #{$value};
+			}
+		}
+	}
+}
+
+@each $shade, $colors in $colors {
+	@each $prop, $value in $colors {
+		@if type-of($value) == map {
+			@each $second-prop, $final-value in $value {
+				.bg-#{$shade}-#{$prop}-#{$second-prop} {
+					background-color: #{$final-value};
+				}
+			}
+		} @else {
+			.bg-#{$shade}-#{$prop} {
+				background-color: #{$value};
+			}
+		}
+	}
+}

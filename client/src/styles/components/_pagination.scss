@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+::-moz-selection {
+	/* Code for Firefox */
+	color: var(--clr-neutral-1000);
+	background: var(--clr-primary-100);
+}
+
+::selection {
+	color: var(--clr-neutral-1000);
+	background: var(--clr-primary-100);
+}

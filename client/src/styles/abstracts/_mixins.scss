@@ -1,0 +1,93 @@
+@use './breakpoints' as *;
+
+@mixin mq($point) {
+	$large: map-get($breakpoints, "large");
+	$medium: map-get($breakpoints, "medium");
+	$small: map-get($breakpoints, "small");
+
+	@if $point == "small" {
+		@media screen and (max-width: $small) {
+			@content;
+		}
+	}
+	@if $point == "medium" {
+		@media screen and (min-width: $small) and (max-width: $medium) {
+			@content;
+		}
+	}
+
+	@if $point == "large" {
+		@media screen and (min-width: $medium) and (max-width: $large) {
+			@content;
+		}
+	}
+
+	@if $point == "small-medium" {
+		@media screen and (max-width: $medium) {
+			@content;
+		}
+	}
+
+	@if $point == "medium-large" {
+		@media screen and (min-width: $medium) and (max-width: $large) {
+			@content;
+		}
+	}
+
+	@if $point == "all" {
+		@media screen and (max-width: $large) {
+			@content;
+		}
+	}
+}
+
+@mixin container {
+	max-width: 70%;
+	margin: 0 auto;
+
+	@include mq("small") {
+		max-width: 85%;
+	}
+}
+
+@mixin pseudo($loc: before, $content: "", $pos: absolute) {
+	position: relative;
+
+	&::#{$loc} {
+		content: $content;
+		position: $pos;
+		display: block;
+		@content;
+	}
+}
+
+@mixin abs-positioning($top: unset, $right: unset, $bottom: unset, $left: unset) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin btn-hover($bg, $color, $border-color) {
+	@if $color {
+		color: $color;
+	}
+	border-color: $border-color;
+	background-color: $bg;
+}
+
+@mixin icon-bg($bg, $padding: 1.1rem) {
+	padding: $padding;
+	border-radius: 50%;
+	background-color: $bg;
+	box-shadow: rgba(115, 115, 115, 0.15) 0px 2px 5px;
+}
+
+@mixin box-shadow($color: rgba(115, 115, 115, 0.25)) {
+	box-shadow: 0px 4px 20px $color;
+}
+
+@mixin transition($type: all, $duration: 250ms, $delay: 0ms) {
+	transition: $type ease-in-out $duration $delay;
+}

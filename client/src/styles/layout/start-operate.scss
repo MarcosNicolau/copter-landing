@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+.start-operate {
+	&__steps {
+		flex-wrap: nowrap;
+		@include mq("small-medium") {
+			display: block;
+		}
+	}
+
+	&__step {
+		margin: 0 2rem;
+		text-align: center;
+		color: var(--clr-primary-200);
+		@include mq("small-medium") {
+			margin: 4rem 0rem;
+		}
+	}
+
+	&__step-img-container {
+		@include icon-bg(var(--clr-neutral-920), $padding: 1.5rem);
+		margin-bottom: 1em;
+		img {
+			height: 3.5rem;
+			width: 3.5rem;
+		}
+	}
+
+	&__line {
+		width: 12rem;
+		height: 0.15rem;
+		background-color: var(--clr-neutral-0);
+		@include mq("small-medium") {
+			display: none;
+		}
+	}
+}
