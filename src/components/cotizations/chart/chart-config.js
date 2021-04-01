@@ -1,4 +1,15 @@
-const chartConfig = (prices, timestamps, datapoint, name, color) => {
+import { useChartContext } from "./context";
+import { useCryptoContext } from "../context";
+
+const chartConfig = (datapoint) => {
+	const {
+		state: { name, color },
+	} = useCryptoContext();
+	const {
+		state: {
+			data: { prices, timestamps },
+		},
+	} = useChartContext();
 	return {
 		options: {
 			chart: {
@@ -24,7 +35,7 @@ const chartConfig = (prices, timestamps, datapoint, name, color) => {
 					enabled: false,
 				},
 			},
-			colors: [color],
+			colors: [color || "#fff"],
 			xaxis: {
 				categories: timestamps || [],
 				labels: {
@@ -51,7 +62,7 @@ const chartConfig = (prices, timestamps, datapoint, name, color) => {
 			},
 			markers: {
 				size: 1,
-				strokeColors: "#ffe9cc",
+				strokeColors: color,
 				strokeWidth: 2,
 				radius: 2,
 				hover: {

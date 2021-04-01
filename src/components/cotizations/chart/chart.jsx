@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useChartContext } from "./context";
+import { useCryptoContext } from "../context";
 import Chart from "react-apexcharts";
 import chartConfig from "./chart-config";
 import ChangeDateBtn from "./change-date-btn";
@@ -7,15 +8,17 @@ import ChangeDateBtn from "./change-date-btn";
 const CryptoChart = () => {
 	const {
 		state: {
-			data: { prices, timestamps },
-			crypto: { name, abbr, color, logo },
+			data: { prices },
 			ranges,
 		},
 	} = useChartContext();
 
+	const {
+		state: { name, logo },
+	} = useCryptoContext();
 	//Using a ref and not an state becuase it causes a re-render and the chart bugs
 	const datapoint = useRef();
-	const chart = chartConfig(prices, timestamps, datapoint, abbr, color);
+	const chart = chartConfig(datapoint);
 
 	//Set a default value for the datapoint
 	useEffect(() => {

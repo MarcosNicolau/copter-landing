@@ -14,8 +14,6 @@ const explanationReducer = (state, action) => {
 		case explanationActions.SET_INFO:
 			return {
 				...state,
-				name: payload.name,
-				illustration: payload.illustration,
 				explanation: payload.explanation,
 			};
 	}

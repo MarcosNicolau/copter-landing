@@ -5,25 +5,15 @@ const chartState = {
 		prices: [],
 		timestamps: [],
 	},
-	crypto: {
-		abbr: "",
-		name: "",
-		logo: "",
-		color: "",
-	},
 	ranges: {
 		WEEKLY: "weekly",
 		MONTHLY: "monthly",
 		YEARLY: "yearly",
 	},
-	date: {
-		active: "yearly",
-		timestamp: `${new Date().getFullYear()}-01-01`,
-	},
+	activeDate: "yearly",
 };
 
 const chartActions = {
-	SET_CRYPTO: "set-crypto",
 	SET_DATA: "set-data",
 	SET_DATE: "set-date",
 };
@@ -31,18 +21,15 @@ const chartActions = {
 const chartReducer = (state, action) => {
 	const payload = action.payload;
 	switch (action.type) {
-		case chartActions.SET_CRYPTO:
+		case chartActions.SET_DATA:
 			return {
 				...state,
-				crypto: {
-					abbr: payload.abbr,
-					name: payload.name,
-					logo: payload.logo,
-					color: payload.color,
+				data: {
+					prices: payload.prices,
+					timestamps: payload.timestamps,
 				},
+				activeDate: payload.activeDate,
 			};
-		case chartActions.SET_DATA:
-			return { ...state, data: { prices: payload.prices, timestamps: payload.timestamps } };
 		case chartActions.SET_DATE:
 			return setDate(state, payload);
 		default:

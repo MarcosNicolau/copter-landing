@@ -3,18 +3,22 @@ import { useChartContext } from "./context";
 
 const ChangeDateBtn = ({ name, range }) => {
 	const {
-		state: {
-			date: { active },
-		},
+		state: { activeDate },
 		dispatch,
 		chartActions,
+		getChartData,
 	} = useChartContext();
 
-	const updateChartDate = (e) => dispatch({ type: chartActions.SET_DATE, payload: e });
+	const updateChart = (e) =>
+		dispatch({
+			type: chartActions.SET_DATE,
+			payload: { target: e.target, getChartData },
+		});
+
 	return (
 		<button
-			className={active === range ? "chart__active-timestamp" : ""}
-			onClick={updateChartDate}
+			className={activeDate === range ? "chart__active-timestamp" : ""}
+			onClick={updateChart}
 			timestamp={range}
 		>
 			{name}

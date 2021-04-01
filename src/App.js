@@ -6,9 +6,7 @@ import "aos/dist/aos.css";
 
 //Contexts
 import NavContextProvider from "./components/shared/states/nav-context";
-import PriceContextProvider from "./components/cotizations/price/context";
-import ChartContextProvider from "./components/cotizations/chart/context";
-import CryptoExplanationContextProvider from "./components/cotizations/crypto-explanation/context";
+import CryptoContextProvider from "./components/cotizations/context";
 
 //Nav and footer
 import Navigation from "./components/navigation";
@@ -16,7 +14,9 @@ import Footer from "./components/footer.jsx";
 
 //Pages
 import Home from "./components/home";
-import BitcoinCotization from "./components/cotizations/bitcoin";
+import BitcoinCotization from "./components/cotizations/pages/bitcoin";
+import EthereumCotization from "./components/cotizations/pages/ethereum";
+import ReserveCotization from "./components/cotizations/pages/reserve";
 
 const App = () => {
 	useEffect(() =>
@@ -34,17 +34,11 @@ const App = () => {
 				<Navigation />
 				<Switch>
 					<Route exact path="/" component={Home} />
-					<PriceContextProvider>
-						<ChartContextProvider>
-							<CryptoExplanationContextProvider>
-								<Route
-									exact
-									path="/cotizaciones/bitcoin"
-									component={BitcoinCotization}
-								/>
-							</CryptoExplanationContextProvider>
-						</ChartContextProvider>
-					</PriceContextProvider>
+					<CryptoContextProvider>
+						<Route exact path="/cotizaciones/bitcoin" component={BitcoinCotization} />
+						<Route exact path="/cotizaciones/ethereum" component={EthereumCotization} />
+						<Route exact path="/cotizaciones/reserve" component={ReserveCotization} />
+					</CryptoContextProvider>
 				</Switch>
 			</NavContextProvider>
 			<Footer />

@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { createContext, useContext, useEffect, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import chartReducer, { chartActions, chartState } from "./reducer";
+import { useCryptoContext } from "../context";
 
 const ChartContext = createContext("");
 
@@ -8,23 +9,22 @@ const useChartContext = () => useContext(ChartContext);
 
 const ChartContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(chartReducer, chartState);
+	const {
+		state: { abbr },
+	} = useCryptoContext();
 
-	const getChartData = async (crypto, timestamp) => {
+	const getChartData = async (timestamp, range) => {
 		const endpoint = `/get-chart-data`;
-		const res = await axios.post(endpoint, { crypto, timestamp });
-		const timestamps = res.data[0].timestamps.map((timestamp) =>
-			new Date(timestamp).toDateString()
-		);
+		const res = await axios.post(endpoint, { crypto: abbr, timestamp });
 		dispatch({
 			type: chartActions.SET_DATA,
-			payload: { prices: res.data[0].prices, timestamps },
+			payload: {
+				prices: res.data.prices,
+				timestamps: res.data.timestamps,
+				activeDate: range,
+			},
 		});
 	};
-
-	useEffect(() => {
-		if (!state.crypto.abbr) return;
-		getChartData(state.crypto.abbr, state.date.timestamp);
-	}, [state.date.timestamp]);
 
 	return (
 		<ChartContext.Provider value={{ getChartData, state, dispatch, chartActions }}>

@@ -1,15 +1,21 @@
 import React from "react";
 import { usePriceContext } from "./context";
+import { useCryptoContext } from "../context";
 
 const Price = () => {
-	const { state, dispatch, priceActions } = usePriceContext();
 	const {
-		cryptoName,
-		pairs,
-		cryptoInitialImg,
-		valoration: { rate, arrow, color },
-		price: { ask, bid },
-	} = state;
+		state: { name, initialLogo },
+	} = useCryptoContext();
+	const {
+		state: {
+			valoration: { rate, arrow, color },
+			price: { ask, bid },
+			pairs,
+		},
+		dispatch,
+		priceActions,
+	} = usePriceContext();
+
 	const updateCurrency = (e) =>
 		dispatch({ type: priceActions.SET_CURRENCY, payload: e.target.value });
 
@@ -19,15 +25,15 @@ const Price = () => {
 				<div className="price__background"></div>
 				<div className="container flex-row-center price__container view-100">
 					<img
-						src={cryptoInitialImg}
+						src={initialLogo}
 						alt="crypto"
 						className="price__crypto-logo"
 						data-aos="fade-right"
 					/>
 					<div className="flex-column-center">
 						<div className="price__title" data-aos="fade">
-							<h2>Cotizacion {cryptoName}</h2>
-							<h5>El valor de {cryptoName} en tiempo real</h5>
+							<h2>Cotizacion {name}</h2>
+							<h5>El valor de {name} en tiempo real</h5>
 						</div>
 						<div className="flex-row-center price__prices">
 							<div>

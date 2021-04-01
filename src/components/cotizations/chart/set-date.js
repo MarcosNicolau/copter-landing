@@ -9,24 +9,19 @@ const weekInThePast = (date) => {
 };
 
 const setDate = (state, payload) => {
-	const timestamp = payload.target.attributes[1].value;
-	const ranges = state.ranges;
+	const { target, getChartData } = payload;
+	const timestamp = target.attributes[1].value;
+	const { YEARLY, MONTHLY, WEEKLY } = state.ranges;
 
 	//Get dates
 	let date = new Date();
 	const year = date.getFullYear();
-	const month = getDate(date.getMonth() + 1);
+	const month = getDate(date.getMonth());
 	const week = weekInThePast(date);
 
-	if (timestamp === ranges.HISTORIC) {
-		return { ...state, date: { timestamp: "2009-01-01", active: ranges.HISTORIC } };
-	}
-	if (timestamp === ranges.YEARLY)
-		return { ...state, date: { timestamp: `${year}-01-01`, active: ranges.YEARLY } };
-	if (timestamp === ranges.MONTHLY)
-		return { ...state, date: { timestamp: `${year}-${month}-01`, active: ranges.MONTHLY } };
-	if (timestamp === ranges.WEEKLY)
-		return { ...state, date: { timestamp: `${year}-${month}-${week}`, active: ranges.WEEKLY } };
+	if (timestamp === YEARLY) getChartData(`${year}-01-01`, YEARLY);
+	if (timestamp === MONTHLY) getChartData(`${year}-${month}-01`, MONTHLY);
+	if (timestamp === WEEKLY) getChartData(`${year}-${month}-${week}`, WEEKLY);
 	return { ...state };
 };
 

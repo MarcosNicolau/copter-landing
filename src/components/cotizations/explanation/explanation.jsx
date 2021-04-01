@@ -1,10 +1,14 @@
 import React from "react";
-import { useCryptoExplanationContext } from "./context";
+import { useExplanationContext } from "./context";
+import { useCryptoContext } from "../context";
 
 const Explanation = () => {
 	const {
-		state: { illustration, name, explanation },
-	} = useCryptoExplanationContext();
+		state: { explanation },
+	} = useExplanationContext();
+	const {
+		state: { illustration, name },
+	} = useCryptoContext();
 	return (
 		<section>
 			<div className="flex-row-center explanation">
